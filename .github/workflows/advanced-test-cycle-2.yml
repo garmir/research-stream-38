@@ -1,0 +1,11 @@
+name: Advanced Test Cycle 2
+on: workflow_dispatch
+jobs:
+  advanced-test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y nmap sqlmap python3 golang-go
+          echo "Cycle 2: $(nmap --version | head -1)"
+          curl -s ifconfig.me
